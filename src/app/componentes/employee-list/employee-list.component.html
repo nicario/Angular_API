@@ -1,0 +1,37 @@
+<div class="container custom-container2">
+  <div class="col-md-12">
+    <div *ngIf = "listaColaboradores != 0; else listaSemDados">
+      <h3>{{tituloComp}}</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id Colaborador</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Ação a executar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let dados of listaColaboradores">
+            <td>{{dados.id}}</td>
+            <td>{{dados.name}}</td>
+            <td>{{dados.email}}</td>
+            <td>{{dados.phone}}</td>
+            <span class="edit" routerLink = "/employee-edit/{{dados.id}}">Editar</span>
+            <span class="delete" (click) = "excluirColaborador(dados.id)">Excluir</span>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-outline-primary" routerLink = "/employee-create">Criar Registro</button>
+    </div>
+  </div>
+  <ng-template #listaSemDados>
+    <div class="no-data text-center">
+      <p>
+        Ainda não há registros...Crie!.. Clique no botão abaixo.
+      </p>
+      <button class="btn btn-outline-primary" routerLink = "/employee-create">Criar Registro</button>
+    </div>
+  </ng-template>
+</div>

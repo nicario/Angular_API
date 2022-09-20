@@ -1,0 +1,21 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text center">{{tituloComp}}</h3>
+    
+    <div class="form-group">
+      <input type="text" [(ngModel)] = "dadosRegistro.name" placeholder="Informe seu nome" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <input type="email" [(ngModel)] = "dadosRegistro.email" placeholder="Informe seu email" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)] = "dadosRegistro.phone" placeholder="Informe seu telefone" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-large btn-block" (click) = "inserirColaborador()">Salvar Registro</button>
+    </div>
+  </div>
+</div>
